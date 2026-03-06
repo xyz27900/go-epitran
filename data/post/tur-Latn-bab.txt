@@ -1,0 +1,17 @@
+::consonant:: = b|d͡ʒ|t͡ʃ|d|f|ɟ|ɣ|h|ʒ|k|l|m|n|p|ɾ|s|ʃ|t|v|j|z
+::vowel:: = a|e|ɯ|i|o|ø|u|y|aː|eː|ɯː|iː|oː|øː|uː|yː
+
+% Allophonic variants
+n -> ŋ / _ (k|ɡ)
+l -> ɫ / _ (#|::consonant::::vowel::)
+
+% Vowel length
+a -> aː / _ ɣ(#|::consonant::)
+e -> eː / _ ɣ(#|::consonant::)
+ɯ -> ɯː / _ ɣ(#|::consonant::)
+i -> iː / _ ɣ(#|::consonant::)
+o -> oː / _ ɣ(#|::consonant::)
+ø -> øː / _ ɣ(#|::consonant::)
+u -> uː / _ ɣ(#|::consonant::)
+y -> yː / _ ɣ(#|::consonant::)
+ɣ -> 0 / _ (#|::consonant::)

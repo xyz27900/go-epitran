@@ -1,0 +1,40 @@
+::vowel:: = a|á|â|ã|à|e|é|ê|í|i|o|ó|ô|õ|u|ú|y
+::consonant:: = b|c|ch|ç|d|f|g|gu|h|j|k|l|lh|m|n|nh|p|q|qu|r|rr|s|ss|t|v|w|x|y|z
+::front_vowel:: = e|é|ê|í|i|y
+
+% Palatalization
+c -> s / _ (::front_vowel::)
+g -> ʒ / _ (::front_vowel::)
+
+% Realization of <s>
+s -> z / (::vowel::) _ (::vowel::)
+s -> ʃ / _ #
+s -> ʃ / (::vowel::) _ (::consonant::)
+
+% Realization of <x>
+x -> ʃ / # _
+x -> s / e _ (c|p|s|t)
+x -> s / _ #|(::consonant::)(::vowel::)
+x -> z / #h?e _
+
+% Realization of <z>
+z -> ʒ / _ #|(::consonant::)(::vowel::)
+
+% Realization of gu
+gu -> gʷ / _ (::front_vowel::)
+qu -> kʷ / _ (::front_vowel::)
+
+% Rhotics
+rr -> ʁ / _
+r -> ʁ / #|(::vowel::)(::consonant::) _
+
+% Glide formation
+i -> y / (::vowel::) _ (::vowel::)
+o -> ow / _ (::vowel::)
+
+% H-deletion
+h -> 0 / _
+
+% Nasal reduction
+m|n -> ̃ / (::vowel::) _ #
+m|n -> 0 / _ #

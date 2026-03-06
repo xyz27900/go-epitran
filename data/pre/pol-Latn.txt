@@ -1,0 +1,56 @@
+::nasal_vowel:: = ą|ę
+::vowel:: = a|ą|e|ę|i|o|ó|u|y
+::vow_not_i:: = a|ą|e|ę|o|ó|u|y
+::consonant:: = b|c|ć|cz|d|dź|dż|f|g|h|ch|j|k|l|ł|m|n|ń|p|r|s|ś|sz|t|w|z|ź|ż|rz
+::cons_not_csr:: = b|ć|cz|d|dź|dż|f|g|h|ch|j|k|l|ł|m|n|ń|p|ś|sz|t|w|z|ź|ż|rz
+::voiceless:: = c|ć|h|ch|k|p|sz|ś|s|t
+
+% After nasalized vowels
+0 -> m / (::nasal_vowel::) _ (b|p)
+0 -> ɲ / (::nasal_vowel::) _ (ć|dź)
+0 -> n / (::nasal_vowel::) _ (d|t|c|dz)
+0 -> ŋ / (::nasal_vowel::) _ (g|k)
+
+% Palatalized consonants
+ci -> t͡ɕ / _ (::vow_not_i::)
+dzi -> d͡ʑ / _ (::vow_not_i::)
+si -> ɕ / _ (::vow_not_i::)
+zi -> ʑ / (#|::cons_not_csr::|::vowel::) _ (::vow_not_i::)
+ni -> ɲ / _ (::vow_not_i::)
+ki -> kʲ / _ e
+gi -> ɡʲ / _ e
+c -> t͡ɕ / _ i
+dz -> d͡ʑ / _ i
+s -> ɕ / _ i
+z -> ʑ / (#|::cons_not_csr::|::vowel::) _ i
+n -> ɲ / _ i
+k -> kʲ / _ i
+g -> ɡʲ / _ i
+
+% Voicing assimilation
+% the main difference between ż and rz is:
+% - preceding voiceless consonants assimilate to ż
+% - rz assimilates to preceding voiceless consonants
+k -> ɡ / _ ż
+p -> b / _ ż
+% this is purely allophonic
+% ch -> ɣ / _ ż
+rz -> ʂ / (::voiceless::) _
+
+% Simplification: sześćset -> szejset (etc.)
+ść -> j / sze _ s
+
+% Glide formation
+u -> w / (::vowel::) _
+i -> j / (::vowel::) _ (::consonant::)
+i -> j / _ (::vowel::)
+% Mostly surnames
+y -> j / (::vowel::) _ #
+y -> j / (::vowel::) _ (::consonant::)
+y -> j / _ (::vowel::)
+
+% Denasalization
+ą -> ɔ / _ (l|ł|m|n|ɲ|ŋ)
+ę -> ɛ / _ (l|ł|m|n|ɲ|ŋ)
+ę -> ɛ / _ #
+
